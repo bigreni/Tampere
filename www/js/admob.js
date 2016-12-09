@@ -21,7 +21,7 @@
         // display the banner at startup
         //createSelectedBanner();
         //display interstitial at startup
-
+        loadInterstitial();
     }
     function initAd() {
         var defaultOptions = {
