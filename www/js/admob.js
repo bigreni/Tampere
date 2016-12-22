@@ -40,6 +40,7 @@
         };
         AdMob.setOptions(defaultOptions);
         registerAdEvents();
+        AndroidFullScreen.immersiveMode(successFunction, errorFunction);
     }
     // optional, in case respond to events or handle error
     function registerAdEvents() {
@@ -59,7 +60,7 @@
 
         // new events, with variable to differentiate: adNetwork, adType, adEvent
         document.addEventListener('onAdFailLoad', function (data) {
-            createSelectedBanner();
+            //createSelectedBanner();
             //alert('error: ' + data.error +
             //        ', reason: ' + data.reason +
             //        ', adNetwork:' + data.adNetwork +
@@ -111,22 +112,33 @@
     //    AdMob.prepareInterstitial({ adId: admobid.interstitial, autoShow: autoshow });
     //}
 
+    function successFunction()
+    {
+    }
+ 
+    function errorFunction(error)
+    {
+    }
 
     function loadInterstitial() {
-        AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: true });
+        AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: true, autoShow: true });
     }
 
    function checkFirstUse()
     {
-        var p = window.localStorage.getItem("firstuse");
-        if (p == null) 
+        var currentVersion = 4;
+        var p = window.localStorage.getItem("currentVersion");
+        if (p == null) //App downloaded first time
         {
-            navigator.notification.alert('To see the phone menu, please swipe up/down from the bottom/top of the screen.', initApp, 'Thank you for downloading', 'OK');
-//Spanish
-//            navigator.notification.alert('Para ver el menú del teléfono, por favor, arrastra la pantalla desde arriba hacia abajo o desde abajo hacia arriba.', initApp, 'Gracias por descargar la app', 'OK');
 //Finnish
-//            navigator.notification.alert('To see the phone menu, please swipe up/down from the bottom/top of the screen.', initApp, 'Thank you for downloading', 'OK');
-            window.localStorage.setItem("firstuse", 1);
+            navigator.notification.alert('To see the phone menu, please swipe up/down from the bottom/top of the screen.', initApp, 'Thank you for downloading', 'OK');
+            window.localStorage.setItem("currentVersion", currentVersion);
+        }
+        else if(p < currentVersion) //if app upgraded
+        {
+//Finnish
+            navigator.notification.alert('To see the phone menu, please swipe up/down from the bottom/top of the screen.', initApp, 'Thank you for updating', 'OK');
+            window.localStorage.setItem("currentVersion", currentVersion);            
         }
         else
         {
@@ -140,8 +152,8 @@ function askRating()
   AppRate.preferences = {
   openStoreInApp: true,
   useLanguage:  'fi',
-  usesUntilPrompt: 5,
-  promptAgainForEachNewVersion: false,
+  usesUntilPrompt: 10,
+  promptAgainForEachNewVersion: true,
   storeAppURL: {
                 android: 'market://details?id=com.tampere.withads'
                }
