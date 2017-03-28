@@ -47,3 +47,24 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+function showMap()
+{
+    document.getElementById('divPlanner').style.visibility = 'hidden';
+    document.getElementById('divMap').style.visibility = 'visible';
+    document.getElementById('divPlanner').style.height = '0vh';
+    document.getElementById('divMap').style.height = '100vh';
+}
+
+function showPlanner()
+{
+    if(document.getElementById('frmPlanner').src == '')
+    {
+        document.getElementById('frmPlanner').src = 'http://beta.digitransit.fi/';
+    }
+    document.getElementById('divPlanner').style.display = 'block';
+    document.getElementById('divPlanner').style.visibility = 'visible';
+    document.getElementById('divMap').style.visibility = 'hidden';    
+    document.getElementById('divMap').style.height = '0vh';
+    document.getElementById('divPlanner').style.height = '100vh';
+}

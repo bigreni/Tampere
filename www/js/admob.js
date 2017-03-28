@@ -40,7 +40,6 @@
         };
         AdMob.setOptions(defaultOptions);
         registerAdEvents();
-        AndroidFullScreen.immersiveMode(successFunction, errorFunction);
     }
     // optional, in case respond to events or handle error
     function registerAdEvents() {
@@ -60,17 +59,14 @@
 
         // new events, with variable to differentiate: adNetwork, adType, adEvent
         document.addEventListener('onAdFailLoad', function (data) {
-            //createSelectedBanner();
-            //alert('error: ' + data.error +
-            //        ', reason: ' + data.reason +
-            //        ', adNetwork:' + data.adNetwork +
-            //        ', adType:' + data.adType +
-            //        ', adEvent:' + data.adEvent); // adType: 'banner' or 'interstitial'
+            document.getElementById('screen').style.display = 'none';            
         });
         document.addEventListener('onAdLoaded', function (data) { });
         document.addEventListener('onAdPresent', function (data) { });
         document.addEventListener('onAdLeaveApp', function (data) { });
-        document.addEventListener('onAdDismiss', function (data) { });
+        document.addEventListener('onAdDismiss', function (data) {
+            document.getElementById('screen').style.display = 'none';            
+         });
     }
 
     // click button to call following functions
@@ -126,25 +122,9 @@
 
    function checkFirstUse()
     {
-        var currentVersion = 4;
-        var p = window.localStorage.getItem("currentVersion");
-        if (p == null) //App downloaded first time
-        {
-//Finnish
-            navigator.notification.alert('To see the phone menu, please swipe up/down from the bottom/top of the screen.', initApp, 'Thank you for downloading', 'OK');
-            window.localStorage.setItem("currentVersion", currentVersion);
-        }
-        else if(p < currentVersion) //if app upgraded
-        {
-//Finnish
-            navigator.notification.alert('To see the phone menu, please swipe up/down from the bottom/top of the screen.', initApp, 'Thank you for updating', 'OK');
-            window.localStorage.setItem("currentVersion", currentVersion);            
-        }
-        else
-        {
+            //document.getElementById('screen').style.display = 'none';
             askRating();
             initApp();
-        }
     }
 
 function askRating()
