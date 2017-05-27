@@ -70,9 +70,9 @@
    function checkFirstUse()
     {
             $('#simplemenu').sidr();
-            //initApp();
-            //askRating();
-            document.getElementById('screen').style.display = 'none';
+            initApp();
+            askRating();
+            //document.getElementById('screen').style.display = 'none';
     }
 
 function askRating()
