@@ -2,13 +2,13 @@
 <widget 
 id="com.tampere.withads" 
 version="1.0.0"
-versionCode = "6" 
+versionCode = "7" 
 xmlns="http://www.w3.org/ns/widgets"
 xmlns:gap="http://phonegap.com/ns/1.0"
 >
-    <name>Bus tracker Tampere</name>
+    <name>Tampereen Nysse Bus</name>
     <description>
-        Tampere Bus App with ads.
+        App.
     </description>
     <author email="support@phonegap.com" href="http://phonegap.com">
         PhoneGap Team

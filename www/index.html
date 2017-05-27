@@ -4,12 +4,11 @@
 <meta charset="utf-8" />
 <meta name="format-detection" content="telephone=no" />
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-<!-- Include jQuery Mobile stylesheets -->
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <!-- Include the jQuery library -->
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-<!-- Include the jQuery Mobile library -->
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/jquery.sidr.dark.min.css">
+<script src="js/jquery.sidr.min.js"></script>
 <title>Bustracker Tampere</title>        
     <style>
             /* Hide all the app pages until jQuery Mobile inits to
@@ -44,19 +43,27 @@
                 onLoad();
                 //document.getElementById("screen").style.display = 'none';
             };
-            document.getElementById("screen").innerHTML = 'Loading the map. This may take a few seconds...';
+            document.getElementById("screen").innerHTML = 'Loading the map. Thank you for your patience.';
             document.getElementById("screen").style.display = 'block';
         </script> 
 	<div id="fullpage" data-role="page">
+        <div data-role="content">
+            <h3><a id="simplemenu" href="#sidr" style="font-size: xx-large; background-color: #cac8c8; padding: 5px">&#9776;</a>
+               Menu</h3>
+            <div id="sidr">
+              <ul>
+                <li><a href="javascript:showMap();" >Live Map</a></li>
+                <li><a href="javascript:showPlanner();" >Planner/Reittiopas</a></li>
+              </ul>
+            </div>
+
         <div id="divMap">
-           <iframe id="frmMap" style="width: 100vw; height:90vh; border: none" src="http://busse.fi/" height="240" width="320"></iframe>
-            <a id="lnkPlanner" href="javascript:showPlanner();" class="ui-btn ui-btn-b">Journey Planner</a>
+           <iframe id="frmMap" style="width: 100vw; height:95vh; border: none" src="Map.html" height="240" width="320"></iframe>
          </div>
         <div id="divPlanner" style="display: none;">
-        <iframe id="frmPlanner" style="width: 100vw; height:90vh; border: none" height="240" width="320"></iframe>
-        <a id="lnkMap" href="javascript:showMap();" class="ui-btn ui-btn-b">Live Map</a>   
+        <iframe id="frmPlanner" style="width: 100vw; height:95vh; border: none" height="240" width="320"></iframe>
         </div>   
 	</div>
- 
+ </div>
 </body>
 </html>
