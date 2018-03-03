@@ -70,6 +70,10 @@
    function checkFirstUse()
     {
             $('#simplemenu').sidr();
+            checkPermissions();
+            window.ga.startTrackerWithId('UA-88579601-14', 1, function(msg) {
+                window.ga.trackView('Home');
+            });
             initApp();
             askRating();
             //document.getElementById('screen').style.display = 'none';
@@ -88,4 +92,36 @@ function askRating()
 };
  
 AppRate.promptForRating(false);
+}
+
+function checkPermissions()
+{
+    cordova.plugins.diagnostic.getLocationAuthorizationStatus(function (status) {
+        switch (status) {
+            case cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED:
+                cordova.plugins.diagnostic.requestLocationAuthorization(function (status) {
+                    console.log("success");
+                }, function (error) {
+                    console.error(error);
+                });
+                break;
+            case cordova.plugins.diagnostic.permissionStatus.GRANTED:
+                break;
+            case cordova.plugins.diagnostic.permissionStatus.DENIED:
+                cordova.plugins.diagnostic.requestLocationAuthorization(function (status) {
+                }, function (error) {
+                    console.error(error);
+                });
+                break;
+            case cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS:
+                break;
+            default:
+                cordova.plugins.diagnostic.requestLocationAuthorization(function (status) {
+                }, function (error) {
+                    console.error(error);
+                });
+        }
+    }, function (error) {
+        console.error(error);
+    });
 }
