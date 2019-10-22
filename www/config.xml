@@ -48,7 +48,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
         <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
         <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-        <application android:usesCleartextTraffic="true" />
+    </edit-config>
+    <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:usesCleartextTraffic="true" />
     </edit-config>
     </platform> 
     <allow-navigation href="http://*/*" />
