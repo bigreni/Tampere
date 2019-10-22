@@ -4,8 +4,9 @@
 <meta charset="utf-8" />
 <meta name="format-detection" content="telephone=no" />
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 <!-- Include the jQuery library -->
-<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="js/jquery-3.4.0.min.js"></script>
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/jquery.sidr.dark.min.css">
 <script src="js/jquery.sidr.min.js"></script>
@@ -23,7 +24,7 @@
                 left: 0;
                 right: 0;
                 z-index:1001;
-                background: lightgrey;
+                background: url(https://s3.us-east-2.amazonaws.com/bigreni.com/img/status.gif) no-repeat center center;
                 text-shadow: none;
                 color: black;
             }
@@ -32,8 +33,13 @@
 </head>
 <body>
 <script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/admob.js"></script>
-<script type="text/javascript" src="js/index.js"></script> 
+    <script type="text/javascript">
+        var cachebuster = Math.round(new Date().getTime() / 1000);
+        //document.write('<script type="text/javascript" src="https://s3.us-east-2.amazonaws.com/bigreni.com/js/tampere/admob.js?cb=' +cachebuster+'"></scr' + 'ipt>');
+        //document.write('<script type="text/javascript" src="https://s3.us-east-2.amazonaws.com/bigreni.com/js/tampere/index.js?cb=' +cachebuster+'"></scr' + 'ipt>');
+        document.write('<script type="text/javascript" src="js/admob.js?cb=' +cachebuster+'"></scr' + 'ipt>');
+        document.write('<script type="text/javascript" src="js/index.js?cb=' +cachebuster+'"></scr' + 'ipt>');
+    </script>
 
     <div id="screen" class="splashscreen" style="display: none"></div>
         <script>
@@ -43,27 +49,28 @@
                 onLoad();
                 //document.getElementById("screen").style.display = 'none';
             };
-            document.getElementById("screen").innerHTML = 'Loading the map. Thank you for your patience.';
+            //document.getElementById("screen").innerHTML = 'Loading the map. Thank you for your patience.';
             document.getElementById("screen").style.display = 'block';
         </script> 
 	<div id="fullpage" data-role="page">
         <div data-role="content">
-            <h3><a id="simplemenu" href="#sidr" style="font-size: xx-large; background-color: #cac8c8; padding: 5px">&#9776;</a>
-               Menu</h3>
-            <div id="sidr">
-              <ul>
-                <li><a href="javascript:showMap();" >Live Map</a></li>
-                <li><a href="javascript:showPlanner();" >Planner/Reittiopas</a></li>
-              </ul>
-            </div>
+            <div id="divMap">
+               <iframe id="frmMap" style="width: 100vw; height:92vh; border: none" src="Map.html" height="240" width="320" allow="geolocation *;"></iframe>
+             </div>
+            <div id="divPlanner" style="display: none;">
+            <iframe id="frmPlanner" style="width: 100vw; height:92vh; border: none" height="240" width="320"></iframe>
+            </div>   
+	    </div>
+    </div>
+    <div id="footer">
+      <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
+      <div class="row" id="bottomNav">
+        <div class="col-xs-6 text-center"><a href="javascript:showMap();"><i class="glyphicon glyphicon glyphicon-time"></i><br>Live Map</a></div>
+        <div class="col-xs-6 text-center"><a href="javascript:showPlanner();"><i class="glyphicon glyphicon-random"></i><br>Planner/Reittiopas</a></div>
+      </div>
+      </div>
+    </div>
 
-        <div id="divMap">
-           <iframe id="frmMap" style="width: 100vw; height:92vh; border: none" src="Map.html" height="240" width="320" allow="geolocation *;"></iframe>
-         </div>
-        <div id="divPlanner" style="display: none;">
-        <iframe id="frmPlanner" style="width: 100vw; height:92vh; border: none" height="240" width="320"></iframe>
-        </div>   
-	</div>
- </div>
+        <script type='text/javascript' src="js/bootstrap.min.js"></script>
 </body>
 </html>

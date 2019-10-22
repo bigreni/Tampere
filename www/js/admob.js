@@ -2,7 +2,7 @@
         if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent))) {
             document.addEventListener('deviceready', checkFirstUse, false);
         } else {
-            checkFirstUse();
+            notFirstUse();
         }
     }
     var admobid = {};
@@ -43,7 +43,9 @@
         document.addEventListener('onAdFailLoad', function (data) {
             document.getElementById('screen').style.display = 'none';            
         });
-        document.addEventListener('onAdLoaded', function (data) { });
+        document.addEventListener('onAdLoaded', function (data) {
+            AdMob.showInterstitial();
+        });
         document.addEventListener('onAdPresent', function (data) { });
         document.addEventListener('onAdLeaveApp', function (data) { });
         document.addEventListener('onAdDismiss', function (data) {
@@ -64,19 +66,24 @@
     }
 
     function loadInterstitial() {
-        AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: true });
+        //AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: false });
+        document.getElementById('screen').style.display = 'none';
     }
 
    function checkFirstUse()
     {
-            $('#simplemenu').sidr();
             checkPermissions();
-            window.ga.startTrackerWithId('UA-88579601-14', 1, function(msg) {
-                window.ga.trackView('Home');
-            });
+            //window.ga.startTrackerWithId('UA-88579601-14', 1, function(msg) {
+            //    window.ga.trackView('Home');
+            //});
             initApp();
             askRating();
             //document.getElementById('screen').style.display = 'none';
+    }
+
+   function notFirstUse()
+    {
+            document.getElementById('screen').style.display = 'none';
     }
 
 function askRating()

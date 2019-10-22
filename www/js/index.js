@@ -10,7 +10,7 @@ function showPlanner()
 {
     if(document.getElementById('frmPlanner').src == '')
     {
-        document.getElementById('frmPlanner').src = 'http://beta.digitransit.fi/';
+        document.getElementById('frmPlanner').src = 'https://beta.digitransit.fi/';
         document.getElementById('frmPlanner').setAttribute('allow', 'geolocation *;');
     }
     document.getElementById('divPlanner').style.display = 'block';
