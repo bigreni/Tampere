@@ -54,19 +54,19 @@
         </script> 
 	<div id="fullpage" data-role="page">
         <div data-role="content">
-            <div id="divMap">
+            <div id="divMap"  style="display: none;">
                <iframe id="frmMap" style="width: 100vw; height:92vh; border: none" src="Map.html" height="240" width="320" allow="geolocation *;"></iframe>
              </div>
-            <div id="divPlanner" style="display: none;">
-                <iframe id="frmPlanner" style="width: 100vw; height:92vh; border: none" height="240" width="320"></iframe>
+            <div id="divPlanner">
+                <iframe id="frmPlanner" style="width: 100vw; height:92vh; border: none" src="https://beta.digitransit.fi/" height="240" width="320" allow="geolocation *;"></iframe>
             </div>   
 	    </div>
     </div>
     <div id="footer">
       <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
       <div class="row" id="bottomNav">
-        <div class="col-xs-6 text-center"><a href="javascript:showMap();"><i class="glyphicon glyphicon glyphicon-time"></i><br>Live Map</a></div>
         <div class="col-xs-6 text-center"><a href="javascript:showPlanner();"><i class="glyphicon glyphicon-random"></i><br>Planner/Reittiopas</a></div>
+        <div class="col-xs-6 text-center"><a href="javascript:showMap();"><i class="glyphicon glyphicon glyphicon-time"></i><br>Live Map</a></div>
       </div>
       </div>
     </div>
