@@ -4,7 +4,8 @@
 <meta charset="utf-8" />
 <meta name="format-detection" content="telephone=no" />
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-<link rel="stylesheet" href="css/main.css"/><title>Live Map</title>
+<link rel="stylesheet" href="css/main.css"/>
+<title>Live Map</title>
 </head>
 <body>
     <div id="map"></div>
@@ -32,5 +33,10 @@
             </div>
         </div>
     </div>
-    <script src="js/main.js"></script></body>
+    <script>
+        var cachebuster = Math.round(new Date().getTime() / 1000);
+        document.write('<script type="text/javascript" src="https://s3.us-east-2.amazonaws.com/bigreni.com/js/tampere/main.js?cb=' +cachebuster+'"></scr' + 'ipt>');
+        // document.write('<script type="text/javascript" src="js/main.js?cb=' +cachebuster+'"></scr' + 'ipt>');
+    </script>
+</body>
 </html>
