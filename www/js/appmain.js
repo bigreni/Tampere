@@ -69,7 +69,7 @@
 
     function loadInterstitial() {
         if ((/(android|windows phone)/i.test(navigator.userAgent))) {
-            AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: true, autoShow: false });
+            AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: false });
             //document.getElementById("screen").style.display = 'none';     
 
         } else if ((/(ipad|iphone|ipod)/i.test(navigator.userAgent))) {
@@ -83,7 +83,7 @@
 
    function checkFirstUse()
     {
-            initApp();
+            initApp1();
             checkPermissions();
             checkTrackingPermissions();
             askRating();
@@ -172,6 +172,53 @@ function showAd()
             if(isready) 
                 AdMob.showInterstitial();
         });
+    }
+    document.getElementById("screen").style.display = 'none'; 
+}
+
+function initApp1()
+{
+    if (/(android)/i.test(navigator.userAgent)){
+    interstitial = new admob.InterstitialAd({
+        //dev
+        adUnitId: 'ca-app-pub-3940256099942544/1033173712'
+        //prod
+        //adUnitId: 'ca-app-pub-9249695405712287/7186317151'
+      });
+    }
+    else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent) || (navigator.userAgent.includes("Mac") && "ontouchend" in document)) {
+        interstitial = new admob.InterstitialAd({
+            //dev
+            adUnitId: 'ca-app-pub-3940256099942544/4411468910'
+            //prod
+            //adUnitId: 'ca-app-pub-9249695405712287/1324624766'
+          });
+    }
+    registerAdEvents1();
+    interstitial.load();
+}
+
+function registerAdEvents1() {
+    // new events, with variable to differentiate: adNetwork, adType, adEvent
+    document.addEventListener('admob.ad.load', function (data) {
+        document.getElementById("screen").style.display = 'none';     
+    });
+    document.addEventListener('admob.ad.loadfail', function (data) {
+        document.getElementById("screen").style.display = 'none';     
+    });
+    document.addEventListener('admob.ad.show', function (data) { 
+        document.getElementById("screen").style.display = 'none';     
+    });
+    document.addEventListener('admob.ad.dismiss', function (data) {
+       document.getElementById("screen").style.display = 'none';     
+    });
+}
+
+function showAd1()
+{
+    document.getElementById("screen").style.display = 'block';     
+    if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent)) || (navigator.userAgent.includes("Mac") && "ontouchend" in document)) {
+        interstitial.show();
     }
     document.getElementById("screen").style.display = 'none'; 
 }

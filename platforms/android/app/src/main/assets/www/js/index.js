@@ -13,9 +13,12 @@ function showMap()
 
 function showPlanner()
 {
+    if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent))) {
+    showAd();
+    }
     if(document.getElementById('frmPlanner').src == '')
     {
-        document.getElementById('frmPlanner').src = 'https://beta.digitransit.fi/';
+        document.getElementById('frmPlanner').src = 'https://tampere.digitransit.fi/';
         document.getElementById('frmPlanner').setAttribute('allow', 'geolocation *;');
     }
     document.getElementById('divPlanner').style.display = 'block';

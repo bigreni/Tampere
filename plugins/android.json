@@ -7,12 +7,9 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-admobsdk": {
-      "PACKAGE_NAME": "com.tampere.withads"
-    },
-    "cordova-plugin-admobpro": {
-      "ADMOB_ANDROID_APP_ID": "ca-app-pub-9249695405712287~5709583956",
-      "PLAY_SERVICES_VERSION": "20.4.0",
+    "admob-plus-cordova": {
+      "APP_ID_ANDROID": "ca-app-pub-9249695405712287~5709583956",
+      "PLAY_SERVICES_VERSION": "20.5.0",
       "PACKAGE_NAME": "com.tampere.withads"
     },
     "cordova-plugin-apprate": {
@@ -43,9 +40,6 @@
     }
   },
   "dependent_plugins": {
-    "cordova-plugin-extension": {
-      "PACKAGE_NAME": "com.tampere.withads"
-    },
     "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "com.tampere.withads"
     },

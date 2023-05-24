@@ -67,10 +67,6 @@
           "/*": [
             {
               "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
-              "count": 2
-            },
-            {
-              "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
               "count": 1
             },
             {
@@ -96,7 +92,7 @@
         "parents": {
           "/*": [
             {
-              "xml": "<feature name=\"AdMob\"><param name=\"android-package\" value=\"com.rjfun.cordova.admob.AdMobPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "xml": "<feature name=\"AdMob\"><param name=\"android-package\" value=\"admob.plus.cordova.AdMob\" /></feature>",
               "count": 1
             },
             {
@@ -171,15 +167,9 @@
     }
   },
   "installed_plugins": {
-    "cordova-admobsdk": {
-      "PACKAGE_NAME": "com.tampere.withads"
-    },
-    "cordova-plugin-extension": {
-      "PACKAGE_NAME": "com.tampere.withads"
-    },
-    "cordova-plugin-admobpro": {
-      "ADMOB_ANDROID_APP_ID": "ca-app-pub-9249695405712287~5709583956",
-      "PLAY_SERVICES_VERSION": "20.4.0",
+    "admob-plus-cordova": {
+      "APP_ID_ANDROID": "ca-app-pub-9249695405712287~5709583956",
+      "PLAY_SERVICES_VERSION": "20.5.0",
       "PACKAGE_NAME": "com.tampere.withads"
     },
     "cordova-plugin-dialogs": {
@@ -221,11 +211,11 @@
   "dependent_plugins": {},
   "modules": [
     {
-      "id": "cordova-plugin-admobpro.AdMob",
-      "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
-      "pluginId": "cordova-plugin-admobpro",
+      "id": "admob-plus-cordova.AdMob",
+      "file": "plugins/admob-plus-cordova/www/admob.js",
+      "pluginId": "admob-plus-cordova",
       "clobbers": [
-        "window.AdMob"
+        "admob"
       ]
     },
     {
@@ -411,9 +401,7 @@
     }
   ],
   "plugin_metadata": {
-    "cordova-admobsdk": "8.13.0",
-    "cordova-plugin-extension": "1.6.0",
-    "cordova-plugin-admobpro": "8.13.1",
+    "admob-plus-cordova": "1.28.0",
     "cordova-plugin-dialogs": "2.0.2",
     "cordova-plugin-nativestorage": "2.3.2",
     "cordova-plugin-apprate": "1.7.2",
