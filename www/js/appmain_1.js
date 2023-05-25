@@ -83,7 +83,7 @@
 
    function checkFirstUse()
     {
-            initApp();
+            initApp1();
             checkPermissions();
             checkTrackingPermissions();
             askRating();
