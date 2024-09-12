@@ -9,11 +9,11 @@
   "installed_plugins": {
     "admob-plus-cordova": {
       "APP_ID_ANDROID": "ca-app-pub-9249695405712287~5709583956",
-      "PLAY_SERVICES_VERSION": "20.5.0",
+      "PLAY_SERVICES_VERSION": "23.0.0",
       "PACKAGE_NAME": "com.tampere.withads"
     },
     "cordova-plugin-apprate": {
-      "PLAY_CORE_VERSION": "1.+",
+      "PLAY_REVIEW_VERSION": "2.+",
       "PACKAGE_NAME": "com.tampere.withads"
     },
     "cordova-plugin-device": {
@@ -28,6 +28,9 @@
       "PACKAGE_NAME": "com.tampere.withads"
     },
     "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.tampere.withads"
+    },
+    "cordova-plugin-purchase": {
       "PACKAGE_NAME": "com.tampere.withads"
     },
     "cordova-plugin-wkwebview-file-xhr": {
