@@ -55,8 +55,8 @@
               "oldAttrib": {
                 "android:hardwareAccelerated": "true",
                 "android:name": "android.permission.ACCESS_COARSE_LOCATION",
-                "android:versionCode": "30000",
-                "android:versionName": "3.0",
+                "android:versionCode": "40000",
+                "android:versionName": "4.0",
                 "xmlns:android": "http://schemas.android.com/apk/res/android"
               }
             },
@@ -68,8 +68,8 @@
               "oldAttrib": {
                 "android:hardwareAccelerated": "true",
                 "android:name": "android.permission.ACCESS_FINE_LOCATION",
-                "android:versionCode": "30000",
-                "android:versionName": "3.0",
+                "android:versionCode": "40000",
+                "android:versionName": "4.0",
                 "xmlns:android": "http://schemas.android.com/apk/res/android"
               }
             },
@@ -81,8 +81,8 @@
               "oldAttrib": {
                 "android:hardwareAccelerated": "true",
                 "android:name": "com.google.android.gms.permission.AD_ID",
-                "android:versionCode": "30000",
-                "android:versionName": "3.0",
+                "android:versionCode": "40000",
+                "android:versionName": "4.0",
                 "xmlns:android": "http://schemas.android.com/apk/res/android"
               }
             },
@@ -94,8 +94,8 @@
               "oldAttrib": {
                 "android:hardwareAccelerated": "true",
                 "android:name": "com.android.vending.BILLING",
-                "android:versionCode": "30000",
-                "android:versionName": "3.0",
+                "android:versionCode": "40000",
+                "android:versionName": "4.0",
                 "xmlns:android": "http://schemas.android.com/apk/res/android"
               }
             }
@@ -122,11 +122,11 @@
               "count": 1
             },
             {
-              "xml": "<uses-permission android:name=\"com.android.vending.BILLING\" />",
+              "xml": "<uses-permission android:name=\"android.permission.BLUETOOTH\" />",
               "count": 1
             },
             {
-              "xml": "<uses-permission android:name=\"android.permission.BLUETOOTH\" />",
+              "xml": "<uses-permission android:name=\"com.android.vending.BILLING\" />",
               "count": 1
             }
           ]
@@ -247,15 +247,15 @@
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "com.tampere.withads"
     },
-    "cordova-plugin-purchase": {
-      "PACKAGE_NAME": "com.tampere.withads"
-    },
     "cordova-plugin-wkwebview-file-xhr": {
       "PACKAGE_NAME": "com.tampere.withads"
     },
     "cordova.plugins.diagnostic": {
       "ANDROIDX_VERSION": "1.0.0",
       "ANDROIDX_APPCOMPAT_VERSION": "1.3.1",
+      "PACKAGE_NAME": "com.tampere.withads"
+    },
+    "cordova-plugin-purchase": {
       "PACKAGE_NAME": "com.tampere.withads"
     }
   },
@@ -363,15 +363,6 @@
       ]
     },
     {
-      "id": "cordova-plugin-purchase.CdvPurchase",
-      "file": "plugins/cordova-plugin-purchase/www/store.js",
-      "pluginId": "cordova-plugin-purchase",
-      "clobbers": [
-        "store",
-        "CdvPurchase"
-      ]
-    },
-    {
       "id": "cordova.plugins.diagnostic.Diagnostic",
       "file": "plugins/cordova.plugins.diagnostic/www/android/diagnostic.js",
       "pluginId": "cordova.plugins.diagnostic",
@@ -458,6 +449,15 @@
       "merges": [
         "cordova.plugins.diagnostic.external_storage"
       ]
+    },
+    {
+      "id": "cordova-plugin-purchase.CdvPurchase",
+      "file": "plugins/cordova-plugin-purchase/www/store.js",
+      "pluginId": "cordova-plugin-purchase",
+      "clobbers": [
+        "store",
+        "CdvPurchase"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -470,8 +470,8 @@
     "cordova-support-android-plugin": "2.0.4",
     "cordova-plugin-idfa": "3.0.0",
     "cordova-plugin-inappbrowser": "6.0.0",
-    "cordova-plugin-purchase": "13.11.1",
     "cordova-plugin-wkwebview-file-xhr": "3.1.1",
-    "cordova.plugins.diagnostic": "7.1.4"
+    "cordova.plugins.diagnostic": "7.1.4",
+    "cordova-plugin-purchase": "13.12.1"
   }
 }

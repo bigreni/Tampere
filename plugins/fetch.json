@@ -57,14 +57,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-purchase": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-purchase"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-inappbrowser": {
     "source": {
       "type": "registry",
@@ -107,5 +99,13 @@
       "APP_ID_ANDROID": "ca-app-pub-9249695405712287~5709583956",
       "PLAY_SERVICES_VERSION": "23.0.0"
     }
+  },
+  "cordova-plugin-purchase": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-purchase"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

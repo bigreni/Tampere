@@ -102,15 +102,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
-      "id": "cordova-plugin-purchase.CdvPurchase",
-      "file": "plugins/cordova-plugin-purchase/www/store.js",
-      "pluginId": "cordova-plugin-purchase",
-      "clobbers": [
-        "store",
-        "CdvPurchase"
-      ]
-    },
-    {
       "id": "cordova.plugins.diagnostic.Diagnostic",
       "file": "plugins/cordova.plugins.diagnostic/www/android/diagnostic.js",
       "pluginId": "cordova.plugins.diagnostic",
@@ -197,6 +188,15 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "merges": [
         "cordova.plugins.diagnostic.external_storage"
       ]
+    },
+    {
+      "id": "cordova-plugin-purchase.CdvPurchase",
+      "file": "plugins/cordova-plugin-purchase/www/store.js",
+      "pluginId": "cordova-plugin-purchase",
+      "clobbers": [
+        "store",
+        "CdvPurchase"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -209,8 +209,8 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-support-android-plugin": "2.0.4",
     "cordova-plugin-idfa": "3.0.0",
     "cordova-plugin-inappbrowser": "6.0.0",
-    "cordova-plugin-purchase": "13.11.1",
     "cordova-plugin-wkwebview-file-xhr": "3.1.1",
-    "cordova.plugins.diagnostic": "7.1.4"
+    "cordova.plugins.diagnostic": "7.1.4",
+    "cordova-plugin-purchase": "13.12.1"
   };
 });

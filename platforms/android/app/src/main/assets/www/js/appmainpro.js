@@ -1,5 +1,5 @@
     function onLoad() {
-        if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent))) {
+        if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent)) || (navigator.userAgent.includes("Mac") && "ontouchend" in document)) {
             document.addEventListener('deviceready', checkFirstUse, false);
         } else {
             notFirstUse();
@@ -95,9 +95,9 @@ function initApp()
     if (/(android)/i.test(navigator.userAgent)){
     interstitial = new admob.InterstitialAd({
         //dev
-        adUnitId: 'ca-app-pub-3940256099942544/1033173712'
+        //adUnitId: 'ca-app-pub-3940256099942544/1033173712'
         //prod
-        //adUnitId: 'ca-app-pub-9249695405712287/7186317151'
+        adUnitId: 'ca-app-pub-9249695405712287/7186317151'
       });
     }
     else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent) || (navigator.userAgent.includes("Mac") && "ontouchend" in document)) {

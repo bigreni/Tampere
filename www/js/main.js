@@ -10633,7 +10633,8 @@
             "use strict";
             var c = t("leaflet"),
                 f = {
-                    urlTemplate: "https://{s}.base.maps.cit.api.here.com/maptile/2.1/maptile/newest/normal.day.grey/{z}/{x}/{y}/256/png8?app_id=PSK0FXmSMedrhq0pnjeh&app_code=NrsNjPndpr8j9Ab-WrN7hg ",
+                    urlTemplate: "https://maps.hereapi.com/v3/base/mc/{z}/{x}/{y}/png8?style=lite.day&apiKey=To038xLM1Wwe_bn1tt3hjkcFh6gw7D_GQyaPZLPyc_A",
+                    //urlTemplate: "https://{s}.base.maps.cit.api.here.com/maptile/2.1/maptile/newest/normal.day.grey/{z}/{x}/{y}/256/png8?app_id=PSK0FXmSMedrhq0pnjeh&app_code=NrsNjPndpr8j9Ab-WrN7hg ",
                     options: {
                         subdomains: "1234"
                     }
